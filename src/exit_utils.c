@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   exit_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slasfar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: slasfar <slasfar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 01:35:00 by slasfar           #+#    #+#             */
-/*   Updated: 2024/10/27 18:22:08 by slasfar          ###   ########.fr       */
+/*   Created: 2025/02/17 10:40:10 by slasfar           #+#    #+#             */
+/*   Updated: 2025/02/18 09:17:14 by slasfar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishel.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	pexit(char *msg, int status)
 {
-	t_list	*pr;
+	perror(msg);
+	exit(status);
+}
 
-	pr = NULL;
-	while (lst)
-	{
-		pr = lst;
-		lst = lst->next;
-	}
-	return (pr);
+void	wexit(char *msg, int status)
+{
+	write(2, msg, str_len(msg));
+	exit(status);
 }
